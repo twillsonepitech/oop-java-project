@@ -1,0 +1,59 @@
+{"clients": [
+  {
+    "clientId": "7d0b9168-6923-4daa-a877-f901c7a10927",
+    "clientName": "Thomas Willson",
+    "clientAge": 21,
+    "clientNationality": "French",
+    "vehicles": [
+      {
+        "price": 27000,
+        "numberOfDoors": 4,
+        "model": "Altima",
+        "vehicleId": "9b6985c4-919f-4d66-8efb-71f728ef10e6",
+        "brand": "Nissan"
+      },
+      {
+        "price": 9000,
+        "model": "Ninja 650",
+        "vehicleId": "5c04f3dd-478e-43fa-8f41-afd06ae7a763",
+        "type": "Sport Touring",
+        "brand": "Kawasaki"
+      }
+    ]
+  },
+  {
+    "clientId": "48d694fd-d789-4597-b74d-1d7b6fe3a81c",
+    "clientName": "Joseph Willson",
+    "clientAge": 25,
+    "clientNationality": "French",
+    "vehicles": [
+      {
+        "price": 12000,
+        "model": "Sportster",
+        "vehicleId": "150297c9-ed6d-4482-9b1a-1098604efded",
+        "type": "Cruiser",
+        "brand": "Harley-Davidson"
+      },
+      {
+        "price": 28000,
+        "numberOfDoors": 4,
+        "model": "Accord",
+        "vehicleId": "4af13c4c-ff2d-4b38-a49d-8c52b3dbd47c",
+        "brand": "Honda"
+      }
+    ]
+  },
+  {
+    "clientId": "a443a91d-8166-411e-81cb-92cceccc66dc",
+    "clientName": "Damerse Willson",
+    "clientAge": 23,
+    "clientNationality": "French",
+    "vehicles": [{
+      "price": 13000,
+      "model": "Monster 821",
+      "vehicleId": "d643ae20-9292-4fd2-9d5f-7a77f23287c1",
+      "type": "Standard",
+      "brand": "Ducati"
+    }]
+  }
+]}

@@ -10,6 +10,10 @@ public class Car extends Vehicle implements Purchasable {
         return this.numberOfDoors;
     }
 
+    public void setNumberOfDoors(int numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
+    }
+
     @Override
     public void purchase(Client client) {
         System.out.println(client.toString() + " purchased Car: " + this);

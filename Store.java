@@ -27,10 +27,6 @@ public class Store {
         this.vehicles = vehicles;
     }
 
-    public void addClient(Client client) {
-        this.clients.add(client);
-    }
-
     public void generateVehicles() {
         // Adding Cars to Vehicles array
         this.vehicles.add(new Car("701cede8-c5b0-4a65-9397-138c444dd475", "Toyota", "Camry", 25000.0, 4));
@@ -45,6 +41,10 @@ public class Store {
         this.vehicles.add(new Motorcycle("13ee1120-a884-464d-947f-1bf570395767", "Yamaha", "MT-09", 9500.0, "Naked"));
         this.vehicles.add(new Motorcycle("5c04f3dd-478e-43fa-8f41-afd06ae7a763", "Kawasaki", "Ninja 650", 9000.0, "Sport Touring"));
         this.vehicles.add(new Motorcycle("d643ae20-9292-4fd2-9d5f-7a77f23287c1", "Ducati", "Monster 821", 13000.0, "Standard"));        
+    }
+
+    public void addClient(Client client) {
+        this.clients.add(client);
     }
 
     public void displayClients() {

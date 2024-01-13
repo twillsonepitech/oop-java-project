@@ -10,6 +10,10 @@ public class Motorcycle extends Vehicle implements Purchasable {
         return this.type;
     }
 
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public void purchase(Client client) {
         System.out.println(client.toString() + " purchased Motorcycle: " + this);

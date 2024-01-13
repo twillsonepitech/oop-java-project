@@ -2,6 +2,8 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Main {
+    private static final int MINIMUM_AGE = 18;
+
     public static boolean isValidClientName(String clientName) {
         // Validate that the client name does not contain numbers
         return !Pattern.compile("[0-9]").matcher(clientName).find();
@@ -11,7 +13,7 @@ public class Main {
         // Validate that the client age is a valid integer
         try {
             int age = Integer.parseInt(clientAge);
-            return age >= 18; // Age should be a positive integer and higher than 18 (majority)
+            return age >= MINIMUM_AGE; // Age should be a positive integer and higher than 18 (majority)
         } catch (NumberFormatException e) {
             System.err.println("Client Age must be an integer: " + e.getMessage());
         } catch (Exception e) {

@@ -1,0 +1,112 @@
++----------------------+
+|        Vehicle       |
++----------------------+
+# id: String
+# brand: String
+# model: String
+# price: double
++----------------------+
++ getId(): String
++ getBrand(): String
++ getModel(): String
++ getPrice(): double
++ setId(String): void
++ setBrand(String): void
++ setModel(String): void
++ setPrice(double): void
++ toString(): String
++----------------------+
+        ^
+        |
+        |
++----------------------+
+|      Purchasable     |
++----------------------+
++ purchase(Client): void
++----------------------+
+
++----------------------+
+|         Car          |
++----------------------+
+- numberOfDoors: int
++----------------------+
++ getNumberOfDoors(): int
++ setNumberOfDoors(int): void
++ purchase(Client): void
++ toString(): String
++----------------------+
+
++----------------------+
+|     Motorcycle       |
++----------------------+
+- type: String
++----------------------+
++ getType(): String
++ setType(String): void
++ purchase(Client): void
++ toString(): String
++----------------------+
+
++----------------------+
+|       Client         |
++----------------------+
+- clientId: String
+- clientName: String
+- clientAge: int
+- clientNationality: String
+- vehicles: List<Vehicle>
++----------------------+
++ getClientId(): String
++ getClientName(): String
++ getClientAge(): int
++ getClientNationality(): String
++ getVehicles(): List<Vehicle>
++ setClientId(String): void
++ setClientName(String): void
++ setClientAge(int): void
++ setClientNationality(String): void
++ setVehicles(List<Vehicle>): void
++ toString(): String
++ buyVehicle(Vehicle): void
++ sellVehicle(Vehicle): void
++----------------------+
+
++----------------------+
+|        Database      |
++----------------------+
+- FILE_NAME: String
++----------------------+
++ saveToFile(List<Client>): void
++ loadFromFile(): List<Client>
+- createEmptyFile(): void
++----------------------+
+
++----------------------+
+|        Store         |
++----------------------+
+- clients: List<Client>
+- vehicles: List<Vehicle>
++----------------------+
++ getClients(): List<Client>
++ getVehicles(): List<Vehicle>
++ setClients(List<Client>): void
++ setVehicles(List<Vehicle>): void
++ generateVehicles(): void
++ addClient(Client): void
++ displayClients(): void
++ displayVehicles(): void
++ displayClientByID(Client): void
++ purchaseVehicle(String, String): void
++ findVehicleById(String): Vehicle
++ findClientById(String): Client
++----------------------+
+
++----------------------+
+|        Main          |
++----------------------+
+| - MINIMUM_AGE: int   |
++----------------------+
++ isValidClientName(String): boolean
++ isValidClientAge(String): boolean
++ main(String[]): void
++----------------------+

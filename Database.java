@@ -4,10 +4,16 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+// Database class for saving and loading client data to/from a JSON file
 public class Database {
 
-    private static final String FILE_NAME = "database.json";
+    private static final String FILE_NAME = "database.json";  // Name of the JSON file
 
+    /**
+     * Save a list of clients to the JSON file
+     * 
+     * @param clients The list of clients with their respective datas
+     */
     public static void saveToFile(List<Client> clients) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_NAME))) {
             // Create a JSON object to store clients
@@ -58,6 +64,11 @@ public class Database {
         }
     }
 
+    /**
+     * Load a list of clients from the JSON file
+     * 
+     * @return All the clients retrieved from the database file
+     */
     public static List<Client> loadFromFile() {
         List<Client> clients = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
@@ -74,7 +85,7 @@ public class Database {
                 createEmptyFile();
                 return clients;
             }
-    
+
             // Parse JSON content
             JSONObject jsonData = new JSONObject(jsonContent.toString());
 
@@ -115,21 +126,24 @@ public class Database {
         } catch (IOException e) {
             System.err.println("Error loading data from file: " + e.getMessage());
         }
-    
+
         return clients;
     }
 
+    /**
+     * Create an empty JSON file
+     */
     private static void createEmptyFile() {
         try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_NAME))) {
             // Create an empty JSON object
             JSONObject jsonData = new JSONObject();
             jsonData.put("clients", new JSONArray());
-    
+
             // Write the JSON object to the file with indentation
             writer.println(jsonData.toString(2));
-    
+
         } catch (IOException e) {
             System.err.println("Error creating an empty file: " + e.getMessage());
         }
-    }    
+    }
 }

@@ -55,5 +55,25 @@
       "type": "Standard",
       "brand": "Ducati"
     }]
+  },
+  {
+    "clientId": "a88f80a2-1529-458d-8ee3-25c3c805cb13",
+    "clientName": "Thomas",
+    "clientAge": 21,
+    "clientNationality": "French",
+    "vehicles": [{
+      "price": 9500,
+      "model": "MT-09",
+      "vehicleId": "13ee1120-a884-464d-947f-1bf570395767",
+      "type": "Naked",
+      "brand": "Yamaha"
+    }]
+  },
+  {
+    "clientId": "b84cb50c-35d2-487f-87d2-39e72b2cf2a2",
+    "clientName": "Thomas",
+    "clientAge": 21,
+    "clientNationality": "French",
+    "vehicles": []
   }
 ]}

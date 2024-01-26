@@ -80,6 +80,7 @@ public class Store {
      */
     public void addClient(Client client) {
         this.clients.add(client);
+        System.out.println("\n New client has been added :" + client);
     }
 
     /**

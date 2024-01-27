@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -45,7 +46,7 @@ public class Main {
         // Load library data from file
         store.setClients(Database.loadFromFile());
 
-        int choice;
+        int choice = 0;
         do {
             // Print the main menu to the console
             System.out.println("\nLibrary Management System");
@@ -65,9 +66,15 @@ public class Main {
             // Prompt the user to enter their choice
             System.out.print("Enter your choice: ");
 
-            choice = scanner.nextInt();
+            try {
+                choice = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.err.println("Choice must be a number between 1 and 6: " + e.getMessage());
+            } catch (Exception e) {
+                System.err.println("Exception error occurred in the code: " + e.getMessage());
+            }
             scanner.nextLine(); // Consume the newline character
-
+    
             // Handle the user's choice
             switch (choice) {
                 case 1:

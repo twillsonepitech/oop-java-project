@@ -1,112 +1,24 @@
-+----------------------+
-|        Vehicle       |
-+----------------------+
-# id: String
-# brand: String
-# model: String
-# price: double
-+----------------------+
-+ getId(): String
-+ getBrand(): String
-+ getModel(): String
-+ getPrice(): double
-+ setId(String): void
-+ setBrand(String): void
-+ setModel(String): void
-+ setPrice(double): void
-+ toString(): String
-+----------------------+
-        ^
-        |
-        |
-+----------------------+
-|      Purchasable     |
-+----------------------+
-+ purchase(Client): void
-+----------------------+
+First main call database class
+        -> It will call loadFromFile method to load stored data from a JSON file
+        -> At the end of the program, when exiting, it will call saveToFile method, to store new data in a JSON file
+        (both method share the same file)
 
-+----------------------+
-|         Car          |
-+----------------------+
-- numberOfDoors: int
-+----------------------+
-+ getNumberOfDoors(): int
-+ setNumberOfDoors(int): void
-+ purchase(Client): void
-+ toString(): String
-+----------------------+
+Main will create Store object to store clients, vehicles
 
-+----------------------+
-|     Motorcycle       |
-+----------------------+
-- type: String
-+----------------------+
-+ getType(): String
-+ setType(String): void
-+ purchase(Client): void
-+ toString(): String
-+----------------------+
+Database is calling Client class to create a List of clients
 
-+----------------------+
-|       Client         |
-+----------------------+
-- clientId: String
-- clientName: String
-- clientAge: int
-- clientNationality: String
-- vehicles: List<Vehicle>
-+----------------------+
-+ getClientId(): String
-+ getClientName(): String
-+ getClientAge(): int
-+ getClientNationality(): String
-+ getVehicles(): List<Vehicle>
-+ setClientId(String): void
-+ setClientName(String): void
-+ setClientAge(int): void
-+ setClientNationality(String): void
-+ setVehicles(List<Vehicle>): void
-+ toString(): String
-+ buyVehicle(Vehicle): void
-+ sellVehicle(Vehicle): void
-+----------------------+
+Store class is also calling Client class to manipulate Clients
 
-+----------------------+
-|        Database      |
-+----------------------+
-- FILE_NAME: String
-+----------------------+
-+ saveToFile(List<Client>): void
-+ loadFromFile(): List<Client>
-- createEmptyFile(): void
-+----------------------+
 
-+----------------------+
-|        Store         |
-+----------------------+
-- clients: List<Client>
-- vehicles: List<Vehicle>
-+----------------------+
-+ getClients(): List<Client>
-+ getVehicles(): List<Vehicle>
-+ setClients(List<Client>): void
-+ setVehicles(List<Vehicle>): void
-+ generateVehicles(): void
-+ addClient(Client): void
-+ displayClients(): void
-+ displayVehicles(): void
-+ displayClientByID(Client): void
-+ purchaseVehicle(String, String): void
-+ findVehicleById(String): Vehicle
-+ findClientById(String): Client
-+----------------------+
 
-+----------------------+
-|        Main          |
-+----------------------+
-| - MINIMUM_AGE: int   |
-+----------------------+
-+ isValidClientName(String): boolean
-+ isValidClientAge(String): boolean
-+ main(String[]): void
-+----------------------+
+
+Vehicle abstract class, that will implements Purchasable interface
+        (Vehicle has protected attributes)
+
+Car and Motorcycle class extends from Vehicle
+        (so we have access to the purchase method inside the interface)
+
+Difference between Car class and Motorcycle class is that Car class has numberOfDoors as private attribute,
+        whereas Motorcycle class has type as private attribute
+
+And basically, they both have purchase method, to tell the User which Vehicle he purchased

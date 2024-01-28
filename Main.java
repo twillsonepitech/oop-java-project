@@ -72,9 +72,10 @@ public class Main {
                 System.err.println("Choice must be a number between 1 and 6: " + e.getMessage());
             } catch (Exception e) {
                 System.err.println("Exception error occurred in the code: " + e.getMessage());
+            } finally {
+                scanner.nextLine(); // Consume the newline character
             }
-            scanner.nextLine(); // Consume the newline character
-    
+
             // Handle the user's choice
             switch (choice) {
                 case 1:
